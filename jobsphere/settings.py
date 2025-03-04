@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t@)+qnyvpp6mb#m9m#lplt@dnpldz3^bn7!mvksv9*a282*y+6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'testserver']
 
 INTERNAL_IPS = ['127.0.0.1']
 
@@ -40,10 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'job_board',
     'drf_yasg',
-    'debug_toolbar',
+    # 'debug_toolbar',
     #'users',
 ]
     # JWT authentication settings
@@ -60,7 +61,7 @@ REST_FRAMEWORK = {
 
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -68,7 +69,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
 ]
 
 ROOT_URLCONF = 'jobsphere.urls'
@@ -99,15 +99,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'jobsphere_db',  
-        'USER': 'gabi3dev',  
-        'PASSWORD': 'Shmurdaa3',  
+        'USER': 'sandramuraza',
+        'PASSWORD': 'Umukobwamwiza@1',
         'HOST': 'localhost',  
-        'PORT': '5432',  # Default PostgreSQL port
+        'PORT': '5432',
     }
 }
 
 
 
+X_FRAME_OPTIONS = 'ALLOW-FROM'
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
