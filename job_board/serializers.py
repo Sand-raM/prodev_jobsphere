@@ -1,3 +1,4 @@
+# jobsphere/job_board/serializers.py
 from rest_framework import serializers
 from .models import Job, Application
 
