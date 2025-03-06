@@ -41,7 +41,7 @@ schema_view = get_schema_view(
       - Include `Authorization: Bearer <token>` in headers for protected endpoints.
       """,
       terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="gabrieltuyishimire35@gmail.com"),
+      contact=openapi.Contact(email="umurazawigasabo@gmail.com"),
       license=openapi.License(name="MIT License"),
    ),
    public=True,
