@@ -54,7 +54,6 @@ urlpatterns = [
     path('api/auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/auth/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/', include('job_board.urls')),  # Include job board app URLs
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='swagger-ui'),
     path('api/docs/', schema_view.with_ui('swagger', cache_timeout=0), name='swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='redoc'),
     path("__debug__/", include(debug_toolbar.urls)),
