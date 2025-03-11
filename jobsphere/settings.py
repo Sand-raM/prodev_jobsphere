@@ -74,16 +74,30 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "jobsphere.wsgi.application"
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("POSTGRES_DB", "jobsphere_db"),
-        "USER": os.getenv("POSTGRES_USER", "your_db_user"),
-        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "your_db_password"),
-        "HOST": os.getenv("POSTGRES_HOST", "localhost"),
-        "PORT": os.getenv("POSTGRES_PORT", "5432"),
+DJANGO_ENV = os.getenv("DJANGO_ENV", "development")
+
+if DJANGO_ENV == "production":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("DATABASE", "jobsphere_db"),
+            "USER": os.getenv("USERNAME", "jobsphere_db_user"),
+            "PASSWORD": os.getenv("PASSWORD", "aWhkpiRLo6aVsqf8GgqJR81IJInKuN1h"),
+            "HOST": "dpg-cv4n71tds78s73e11m90-a.oregon-postgres.render.com",
+            "PORT": "5432",
+        }
     }
-}
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("POSTGRES_DB", "jobsphere_db"),
+            "USER": os.getenv("POSTGRES_USER", "sandramuraza"),
+            "PASSWORD": os.getenv("POSTGRES_PASSWORD", "Umukobwamwiza@1"),
+            "HOST": os.getenv("POSTGRES_HOST", "localhost"),
+            "PORT": os.getenv("POSTGRES_PORT", "5432"),
+        }
+    }
 
 X_FRAME_OPTIONS = "ALLOW-FROM"
 
